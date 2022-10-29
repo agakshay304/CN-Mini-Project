@@ -26,7 +26,6 @@ photo = ImageTk.PhotoImage(image)
 label = Label(root, image=photo)
 label.place(x=1, y=1, relheight=3.5, relwidth=3.5)
 
-
 def isMobileDevice(useragent):
     user_agent = parse(useragent)
     if user_agent.is_mobile:
