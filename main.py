@@ -26,6 +26,7 @@ photo = ImageTk.PhotoImage(image)
 label = Label(root, image=photo)
 label.place(x=1, y=1, relheight=3.5, relwidth=3.5)
 
+
 def isMobileDevice(useragent):
     user_agent = parse(useragent)
     if user_agent.is_mobile:
@@ -77,7 +78,7 @@ def getUserAgent():
                 myLabel.pack()
             elif isPC(useragent):
                 myLabel = Label(
-                    root, text="Device Type : PC  🖥️", font=fontStyle1, fg="white", bg="#042592")
+                    root, text="Device Type : Desktop 🖥️", font=fontStyle1, fg="white", bg="#042592")
                 myLabel.pack()
             else:
                 myLabel = Label(
