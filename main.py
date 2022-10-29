@@ -14,7 +14,8 @@ heading = 'Device Type Detection'
 root = Tk(
     className=heading.title()
 )
-fontStyle = tkFont.Font(family="Lucida Grande", size=15)
+fontStyle = tkFont.Font(family="Lucida Grande", size=10)
+fontStyle1 = tkFont.Font(family="Lucida Grande", size=25, weight="bold")
 root.geometry("2000x800")
 root.title(heading)
 
@@ -23,7 +24,7 @@ root.title(heading)
 image = Image.open("bg.jpg")
 photo = ImageTk.PhotoImage(image)
 label = Label(root, image=photo)
-label.place(x=0, y=0, relwidth=1, relheight=1)
+label.place(x=1, y=1, relheight=3.5, relwidth=3.5)
 
 
 def isMobileDevice(useragent):
@@ -69,23 +70,23 @@ def getUserAgent():
             i = i+1
             if isMobileDevice(useragent):
                 myLabel = Label(
-                    root, text="Device Type : Mobile", font=fontStyle, bg="light green", fg="black")
+                    root, text="Device Type : Mobile 📱", font=fontStyle1, fg="white", bg="#042592")
                 myLabel.pack()
             elif isTabletDevice(useragent):
                 myLabel = Label(
-                    root, text="Device Type : Tablet", font=fontStyle, bg="light green", fg="black")
+                    root, text="Device Type : Tablet 📱", font=fontStyle1, fg="white", bg="#042592")
                 myLabel.pack()
             elif isPC(useragent):
                 myLabel = Label(
-                    root, text="Device Type : PC", font=fontStyle, bg="light green", fg="black")
+                    root, text="Device Type : PC  🖥️", font=fontStyle1, fg="white", bg="#042592")
                 myLabel.pack()
             else:
                 myLabel = Label(
-                    root, text="Device Type : Unknown", font=fontStyle, bg="light green", fg="black")
+                    root, text="Device Type : Unknown❓", font=fontStyle1, fg="white", bg="#042592")
                 myLabel.pack()
 
             myLabel = Label(root, text="Packet"+str(i) +
-                            ":  " + useragent+"\n", font=fontStyle, bg="blue", fg="black")
+                            ": " + useragent+"\n", font=fontStyle, fg="white", bg="#042592")
 
             myLabel.pack()
 
@@ -94,6 +95,6 @@ def getUserAgent():
 
 fileInputBtn = Button(root, text="Choose file", font=tkFont.Font(family="Lucida Grande", size=15),
                       command=getUserAgent).pack(
-    side=TOP, pady=10, padx=10)
+    side=TOP, pady=20, padx=20)
 
 root.mainloop()
