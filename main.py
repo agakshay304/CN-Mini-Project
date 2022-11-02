@@ -11,9 +11,7 @@ from PIL import Image, ImageTk
 import tkinter.font as tkFont
 
 heading = 'Device Type Detection'
-root = Tk(
-    className=heading.title()
-)
+root = Tk(className=heading.title())
 fontStyle = tkFont.Font(family="Lucida Grande", size=10)
 fontStyle1 = tkFont.Font(family="Lucida Grande", size=25, weight="bold")
 root.geometry("2000x800")
